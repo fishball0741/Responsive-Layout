@@ -1,3 +1,93 @@
-h1 {
-    color: red;
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+article {
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+}
+nav {
+    background: #5995da;
+    flex: 1 50px;
+}
+
+header {
+    background: #b2d6ff;
+}
+
+main {
+    background: #eaedf0;
+    /* flex: 6 300px; */
+    padding: 1rem;
+}
+
+#signup {
+    background: #d6e9fe;
+}
+
+#feature-1 {
+    background: #f5cf8e;
+}
+
+#feature-2 {
+    background: #f09a9d;
+}
+
+#feature-3 {
+    background: #c8c6fa;
+}
+header, section {
+    flex: 50vw;
+    min-height: 200px;
+}
+header, section, nav {
+    display: flex;
+    justify-content: center ;
+    align-items: center ;
+}
+/* tablet below **but dont do it like that, casuse it isnt good way to change format because of the devices. 
+should be based on how good looking is it to change that.*/
+@media screen and (min-width: 500px) and (max-width: 899px) {
+    /* make sure set max if we do another one bigger than that, otherwise will overcover */
+    nav {
+        flex: 100%;
+        min-height: 50px;
+    }
+    article {    
+        flex-flow: row wrap;
+    }
+    section {
+        height: 50vw;
+    }
+    
+}
+
+@media screen and (min-width: 900px) {
+    nav {
+        flex: 100%;
+        min-height: 50px;
+    }
+    article {    
+        flex-flow: row wrap;
+    }   
+    .feature {
+        flex: 33.3vw;
+        min-height: calc(100vw / 3 * 1.25);
+        /* or >> flex: calc(100vw / 3); */
+        /* every feature have 33.3% */
+    }
+    #signup {
+        /* flex: 100%; < will be the top, not bottom */
+        order: 1;
+        min-height: auto;    
+        height: 150px;
+    }
+    header {
+        height: 25vw;
+        flex: 100%
+    }
+    main {
+        order: 2;
+    }
 }
